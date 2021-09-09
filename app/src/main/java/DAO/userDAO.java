@@ -30,7 +30,7 @@ public class userDAO implements DAO<User> {
         user.setName(Objects.requireNonNull(
                 params[0], "Name cannot be null"));
         user.setPassword(Objects.requireNonNull(
-                params[1], "Email cannot be null"));
+                params[1], "Password cannot be null"));
 
         users.add(user);
     }
