@@ -1,4 +1,4 @@
-public class userDAO implements DAO<User> {
+public class userDAO implements com.example.recipesearch.DAO<User> {
     private List<User> users = new ArrayList<>();
 
     public UserDao(){
