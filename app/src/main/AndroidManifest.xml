@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Recipesearch">
         <activity
+            android:name=".AdminMainMenu"
+            android:exported="true" />
+        <activity
+            android:name=".UserMainMenu"
+            android:exported="true" />
+        <activity
             android:name=".CreateAccountActivity"
             android:exported="true" />
         <activity
