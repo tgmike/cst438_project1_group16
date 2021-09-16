@@ -1,9 +1,20 @@
-package userClass;
+package com.example.recipesearch;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
+@Entity
 public class User{
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    @ColumnInfo(name = "name")
     private String name;
+
+    @ColumnInfo(name = "password")
     private String password;
 
     public User(String name, String password) {
@@ -15,6 +26,12 @@ public class User{
     public User() {
         this.name = "none";
         this.password = "none";
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
