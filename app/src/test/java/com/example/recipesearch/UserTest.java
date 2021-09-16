@@ -1,4 +1,4 @@
-package userClass;
+package com.example.recipesearch;
 
 import junit.framework.TestCase;
 

@@ -1,9 +1,23 @@
 package com.example.recipesearch;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import java.util.Objects;
+
+@Entity
 public class Admin {
+    @PrimaryKey(autoGenerate = true)
     private int id;
+
+    @ColumnInfo(name = "username")
     private String username;
+
+    @ColumnInfo(name = "password")
     private String password;
+
+    @ColumnInfo(name = "email")
     private String email;
 
     public Admin(){
@@ -41,6 +55,19 @@ public class Admin {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Admin admin = (Admin) o;
+        return id == admin.id && username.equals(admin.username) && password.equals(admin.password) && Objects.equals(email, admin.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, password, email);
     }
 
     @Override
