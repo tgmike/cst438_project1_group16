@@ -1,9 +1,11 @@
-package com.example.recipesearch;
+package com.example.recipesearch.DAO;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.recipesearch.Admin;
 
 import java.util.ArrayList;
 import java.util.List;

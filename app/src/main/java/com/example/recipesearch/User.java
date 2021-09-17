@@ -1,7 +1,9 @@
 package com.example.recipesearch;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Objects;
@@ -13,7 +15,6 @@ public class User{
 
     @ColumnInfo(name = "name")
     private String name;
-
     @ColumnInfo(name = "password")
     private String password;
 
@@ -22,17 +23,15 @@ public class User{
         this.password = password;
     }
 
-
+    @Ignore
     public User() {
         this.name = "none";
         this.password = "none";
     }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getName() {
         return name;
@@ -58,17 +57,14 @@ public class User{
         return Objects.equals(name, user.name) && Objects.equals(password, user.password);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, password);
-    }
-
+    @NonNull
     @Override
     public String toString() {
         return "User{" +                "name='" + name + '\'' +
-                ", email='" + password + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
+
 
 
 }

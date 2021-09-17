@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+import com.example.recipesearch.DAO.adminDAO;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *

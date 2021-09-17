@@ -2,6 +2,7 @@ package com.example.recipesearch;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Objects;
@@ -10,16 +11,14 @@ import java.util.Objects;
 public class Admin {
     @PrimaryKey(autoGenerate = true)
     private int id;
-
     @ColumnInfo(name = "username")
     private String username;
-
     @ColumnInfo(name = "password")
     private String password;
-
     @ColumnInfo(name = "email")
     private String email;
 
+    @Ignore
     public Admin(){
         username = "Admin";
         password = "password";
