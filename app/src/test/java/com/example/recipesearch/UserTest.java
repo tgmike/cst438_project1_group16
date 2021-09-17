@@ -8,11 +8,11 @@ public class UserTest extends TestCase {
 
     public void testTestGetName() throws NoSuchFieldException, IllegalAccessException {
         final User user = new User();
-        final Field field = user.getClass().getDeclaredField("name");
+        final Field field = user.getClass().getDeclaredField("username");
         field.setAccessible(true);
         field.set(user, "Frank Lloyd Wright");
 
-        final String result = user.getName();
+        final String result = user.getUsername();
 
         assertEquals("Frank Lloyd Wright", result);
     }
@@ -20,9 +20,9 @@ public class UserTest extends TestCase {
     public void testTestSetName() throws NoSuchFieldException, IllegalAccessException {
         final User user = new User();
 
-        user.setName("Frank Lloyd Wright");
+        user.setUsername("Frank Lloyd Wright");
 
-        final Field field = user.getClass().getDeclaredField("name");
+        final Field field = user.getClass().getDeclaredField("username");
         field.setAccessible(true);
         assertEquals("Fields didn't match", field.get(user), "Frank Lloyd Wright");
     }

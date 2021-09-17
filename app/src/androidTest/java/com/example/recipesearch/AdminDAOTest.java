@@ -11,6 +11,9 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+import com.example.recipesearch.db.adminDAO;
+import com.example.recipesearch.db.AppDatabase;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -33,7 +36,7 @@ public class AdminDAOTest {
     @Test
     public void adminInsertTest() {
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        myTest = Room.databaseBuilder(appContext, recipeDB.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
+        myTest = Room.databaseBuilder(appContext, AppDatabase.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
         Admin testmin = new Admin("newAdmin", "newpassword", "newadmin@admin.com");
         testmin.setId(1);
         myTest.insert(testmin);
@@ -47,7 +50,7 @@ public class AdminDAOTest {
     @Test
     public void adminCountTest() {
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        myTest = Room.databaseBuilder(appContext, recipeDB.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
+        myTest = Room.databaseBuilder(appContext, AppDatabase.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
 
         assertEquals(myTest.count(), 0);
         assertEquals("com.example.recipesearch", appContext.getPackageName());
@@ -56,7 +59,7 @@ public class AdminDAOTest {
     @Test
     public void adminUsernameTest() {
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        myTest = Room.databaseBuilder(appContext, recipeDB.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
+        myTest = Room.databaseBuilder(appContext, AppDatabase.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
         Admin testmin = new Admin("newAdmin", "newpassword", "newadmin@admin.com");
         testmin.setId(1);
         myTest.insert(testmin);
@@ -70,7 +73,7 @@ public class AdminDAOTest {
     @Test
     public void adminEmailTest() {
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        myTest = Room.databaseBuilder(appContext, recipeDB.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
+        myTest = Room.databaseBuilder(appContext, AppDatabase.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
         Admin testmin = new Admin("newAdmin", "newpassword", "newadmin@admin.com");
         testmin.setId(1);
         myTest.insert(testmin);
@@ -84,7 +87,7 @@ public class AdminDAOTest {
     @Test
     public void adminInsertAllTest() {
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        myTest = Room.databaseBuilder(appContext, recipeDB.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
+        myTest = Room.databaseBuilder(appContext, AppDatabase.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
 
         Admin testmin1 = new Admin("newAdmin1", "newpassword", "newadmin1@admin.com");
         testmin1.setId(2);
@@ -104,7 +107,7 @@ public class AdminDAOTest {
     @Test
     public void adminAllTest() {
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        myTest = Room.databaseBuilder(appContext, recipeDB.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
+        myTest = Room.databaseBuilder(appContext, AppDatabase.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
         Admin testmin1 = new Admin("newAdmin1", "newpassword", "newadmin1@admin.com");
         testmin1.setId(2);
         Admin testmin2 = new Admin("newAdmin2", "newpassword", "newadmin2@admin.com");
@@ -121,7 +124,7 @@ public class AdminDAOTest {
     @Test
     public void adminDeleteTest() {
         appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        myTest = Room.databaseBuilder(appContext, recipeDB.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
+        myTest = Room.databaseBuilder(appContext, AppDatabase.class, "recipeDB.db").allowMainThreadQueries().build().getAdminDAO();
         Admin testmin = new Admin("newAdmin", "newpassword", "newadmin@admin.com");
         testmin.setId(1);
         myTest.delete(testmin);

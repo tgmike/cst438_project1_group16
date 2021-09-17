@@ -3,63 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SearchRecipes">
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/RecipeSearchTitle"
+        android:layout_width="224dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/recipe_search_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/SearchRecipeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:autofillHints=""
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="@string/search_bar_hint"
-        android:hintTextColor="#757575"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SearchRecipeTitle"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/SearchRecipeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="@string/search_recipes_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/RecipeSearchTitle" />
 
     <Button
         android:id="@+id/SearchBtn"
-        android:layout_width="119dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="@string/search_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/SearchRecipeET"
-        app:layout_constraintTop_toBottomOf="@+id/SearchRecipeTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/RecipeSearchTitle" />
 
-    <EditText
-        android:id="@+id/RecipeFoundTV"
-        android:layout_width="303dp"
-        android:layout_height="416dp"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="333dp"
+        android:layout_height="427dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SearchRecipeET"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.171">
+
+        <TextView
+            android:id="@+id/RecipeResultsTV"
+            android:layout_width="332dp"
+            android:layout_height="430dp"
+            android:layout_marginTop="26dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SearchRecipeET" />
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

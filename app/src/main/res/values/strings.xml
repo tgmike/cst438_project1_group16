@@ -9,11 +9,13 @@
     <string name="create_account_btn">Create Account</string>
     <string name="log_in_btn">Log In</string>
     <string name="password_EditText">Password</string>
-    <string name="welcome_user_msg">Welcome User</string>
+    <string name="welcome_user_msg"></string>
     <string name="menu_create_recipe_btn">Create Recipe</string>
     <string name="menu_search_recipes_btn">Search Recipes</string>
-    <string name="menu_my_recipes_btn">MyRecipes</string>
+    <string name="menu_my_recipes_btn">My Recipes</string>
     <string name="search_recipes_title">Search Recipes</string>
     <string name="search_btn">Search</string>
-    <string name="search_bar_hint">chicken...</string>
+    <string name="search_bar_hint">Italian</string>
+    <string name="recipe_results_tv"></string>
+    <string name="log_out_btn">Log Out</string>
 </resources>
