@@ -2,6 +2,7 @@ package com.example.recipesearch;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import org.json.JSONException;
@@ -19,7 +20,6 @@ public class Recipe {
     private List<String> strIngredients;
     private List<String> strMeasurements;
     private String intermediate;
-
     public Recipe(){
         idMeal = "52772";
         strMeal = "Teriyaki Chicken Casserole";
@@ -31,25 +31,11 @@ public class Recipe {
         strMeasurements.add("3\\/4 cup");
     }
 
-    public Recipe(JSONObject recipe) throws JSONException {
-        idMeal = recipe.getString("idMeal");
-        strMeal = recipe.getString("strMeal");
-        strInstructions = recipe.getString("strInstructions");
-        strMealThumb = recipe.getString("strMealThumb");
-        for(int i = 1; i <= 20; i++){
-            intermediate = recipe.getString(String.format("strIngredient%d", i));
-            if(intermediate.equals("") || intermediate.equals(null)){
-                break;
-            }else{
-                strIngredients.add(intermediate);
-            }
-            intermediate = recipe.getString(String.format("strMeasurement%d", i));
-            if(intermediate.equals("") || intermediate.equals(null)){
-                break;
-            }else{
-                strMeasurements.add(intermediate);
-            }
-        }
+    public Recipe(String idMeal, String strMeal, String strInstructions, String strMealThumb){
+        this.idMeal = idMeal;
+        this.strMeal = strMeal;
+        this.strInstructions = strInstructions;
+        this.strMealThumb = strMealThumb;
     }
 
 
@@ -101,5 +87,15 @@ public class Recipe {
     @Override
     public int hashCode() {
         return Objects.hash(idMeal, strMeal);
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "idMeal='" + idMeal + '\'' +
+                ", strMeal='" + strMeal + '\'' +
+                ", strInstructions='" + strInstructions + '\'' +
+                ", strMealThumb='" + strMealThumb + '\'' +
+                '}';
     }
 }
