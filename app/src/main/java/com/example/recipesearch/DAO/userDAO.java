@@ -1,10 +1,12 @@
-package com.example.recipesearch;
+package com.example.recipesearch.DAO;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.recipesearch.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +22,10 @@ public interface userDAO{
     @Insert
     void insertAll(User... users);
 
-    @Query("SELECT * FROM user WHERE id=:id")
+    @Query("SELECT * FROM User WHERE id=:id")
     User getUser(long id);
 
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM User")
     List<User> getAll();
 
     @Update

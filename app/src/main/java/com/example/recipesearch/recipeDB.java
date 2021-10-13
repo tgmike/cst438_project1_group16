@@ -6,6 +6,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.recipesearch.DAO.adminDAO;
+import com.example.recipesearch.DAO.userDAO;
+
 @Database(entities = {Admin.class, User.class}, version = 1, exportSchema = false)
 public abstract class recipeDB extends RoomDatabase{
     public abstract adminDAO admin();
